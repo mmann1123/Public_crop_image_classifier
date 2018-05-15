@@ -15,7 +15,7 @@ Severe lodging is very costly due to its effects on grain formation and associat
 # Batch labeling of Lodging Events
 
 The folowing notebook shows how new images can be classified, viewed, and labels stored for later use. 
-[Scripts/Batch_Label_New_Images.ipynb](./Batch_Label_New_Images.ipynb) 
+[/Batch_Label_New_Images.ipynb](./Batch_Label_New_Images.ipynb) 
 
 
  ---
@@ -91,13 +91,6 @@ python label_image.py --graph=/tmp/output_graph.pb --labels=/tmp/output_labels.t
 --image=/media/ssd/crop_image_classifier/Data/TestingImages_AOI/A.jpg
 ```
 
-<img src="./Data/TestingImages_AOI/A.jpg" alt="" width="400">
-
-returns:
-```
-yes 0.745566
-no 0.254434
-```
  ---
 <img src="./Data/TestingImages_AOI/B.jpg" alt="" width="400">
 
@@ -122,14 +115,7 @@ returns:
 yes 0.976884
 no 0.0231155
 ```  
- ---
-<img src="./Data/TestingImages_AOI/E.jpg" alt="" width="400">
 
-returns:
-```
-yes 0.874714
-no 0.125286
-```  
  ---
 <img src="./Data/TestingImages_AOI/F.jpg" alt="" width="400">
 
@@ -137,14 +123,6 @@ returns:
 ```
 yes 0.998464
 no 0.00153608
-```  
- ---
-<img src="./Data/TestingImages_AOI/G.jpg" alt="" width="400">
-
-returns:
-```
-no 0.827629
-yes 0.172371
 ```  
  
 ## Test on healthy crop examples
@@ -166,11 +144,6 @@ returns:
 no 0.975636
 yes 0.0243636
 ```  
- ---
-<img src="./Data/TestingImages_AOI/J.jpg" alt="" width="400">
 
-returns:
-```
-no 0.998131
-yes 0.00186947
-```  
+The folowing notebook shows how new images can be classified, viewed, and labels stored for later use. 
+[/Batch_Label_New_Images.ipynb](./Batch_Label_New_Images.ipynb) 
