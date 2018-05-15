@@ -1,0 +1,82 @@
+# for server
+# module load git-lfs
+# module load git/1.8.3.1
+# module load anaconda/4.3.1 cuda/toolkit/9.0
+# /c1/modulefiles/glibc/2.17.sh
+
+python retrain.py --image_dir /home/mmann1123/crop_image_classifier/Data/LodgingLabels  --flip_left_right True --random_brightness=5 --print_misclassified_test_images
+
+
+### desktop 
+# based on: https://www.tensorflow.org/tutorials/image_retraining
+
+source activate tensorflow 
+
+python retrain.py --image_dir /media/ssd/crop_image_classifier/Data/LodgingLabels  --flip_left_right True --random_brightness=5 --print_misclassified_test_images
+
+# files are written to /tmp/ by default
+
+
+
+#To launch TensorBoard, run this command during or after retraining:
+tensorboard --logdir /tmp/retrain_logs
+
+#Once TensorBoard is running, navigate your web browser to localhost:6006 to #view the TensorBoard.
+
+
+
+#apply trained model
+#curl -LO https://github.com/tensorflow/tensorflow/raw/master/tensorflow/examples/label_image/label_image.py
+python label_image.py \
+--graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt \
+--input_layer=Placeholder \
+--output_layer=final_result \
+--image=/media/ssd/crop_image_classifier/Data/TestingImages_AOI/A.jpg
+
+python label_image.py \
+--graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt \
+--input_layer=Placeholder \
+--output_layer=final_result \
+--image=/media/ssd/crop_image_classifier/Data/TestingImages_AOI/B.jpg
+
+python label_image.py \
+--graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt \
+--input_layer=Placeholder \
+--output_layer=final_result \
+--image=/media/ssd/crop_image_classifier/Data/TestingImages_AOI/C.jpg
+
+python label_image.py \
+--graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt \
+--input_layer=Placeholder \
+--output_layer=final_result \
+--image=/media/ssd/crop_image_classifier/Data/TestingImages_AOI/D.jpg
+
+python label_image.py \
+--graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt \
+--input_layer=Placeholder \
+--output_layer=final_result \
+--image=/media/ssd/crop_image_classifier/Data/TestingImages_AOI/E.jpg
+
+python label_image.py \
+--graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt \
+--input_layer=Placeholder \
+--output_layer=final_result \
+--image=/media/ssd/crop_image_classifier/Data/TestingImages_AOI/G.jpg
+
+
+
+python label_image.py \
+--graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt \
+--input_layer=Placeholder \
+--output_layer=final_result \
+--image=/media/ssd/crop_image_classifier/Data/TestingImages_AOI/H.jpg
+
+python label_image.py \
+--graph=/tmp/output_graph.pb --labels=/tmp/output_labels.txt \
+--input_layer=Placeholder \
+--output_layer=final_result \
+--image=/media/ssd/crop_image_classifier/Data/TestingImages_AOI/I.jpg
+
+  
+
+
